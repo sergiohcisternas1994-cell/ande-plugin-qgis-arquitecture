@@ -1,5 +1,5 @@
 ========================================================================
-ESTRUCTURA DE DIRECTORIOS Y ARCHIVOS - ANDE PLUGIN v3.2 25 febrero
+ESTRUCTURA DE DIRECTORIOS Y ARCHIVOS - ANDE PLUGIN v3.3 25 febrero
 ========================================================================
 Ruta de instalación local: 
 C:\Users\[usuario]\AppData\Roaming\QGIS\QGIS3\profiles\default\python\plugins\ande_plugin\
@@ -44,4 +44,5 @@ NOTA DE ARQUITECTURA:
 Si se necesita modificar la Interfaz Gráfica, editar .ui en Qt Designer.
 Si se necesita modificar el Trazado o Atributos, editar archivos dentro de /core/.
 Si se necesita modificar las Acciones de los botones, editar ande_plugin.py.
+
 ========================================================================
