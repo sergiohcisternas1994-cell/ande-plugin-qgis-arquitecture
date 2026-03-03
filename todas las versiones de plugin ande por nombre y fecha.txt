@@ -6,7 +6,7 @@ Ubicación de software ande plugin: C:\Users\cuent\AppData\Roaming\QGIS\QGIS3\pr
 
 --- MARZO ---
 Coming Soon under construction…… until 13 de marzo 2026. 
-[v3.3] - 02 de marzo (ACT) actualización y correc. duplicidad de atributo rwo_tipo_linea en procesador/luminarias
+[v3.3] - 03 de marzo (ACT) actualización y correc. duplicidad de atributo rwo_tipo_linea en procesador/luminarias
 
 -- FEBRERO --
 [v3.2] - 25 de febrero (ACT) actualización y modif. de generador(paso 3) Mario actualizo generador de líneas para eliminar/atenuar las líneas en tramos largos con superposiciones  
@@ -38,4 +38,5 @@ Coming Soon under construction…… until 13 de marzo 2026.
 ===============================================
 Total de versiones registradas: 23
 Última actualización: 02 de marzo 2026
+
 
