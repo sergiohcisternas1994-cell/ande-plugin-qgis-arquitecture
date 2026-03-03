@@ -3,7 +3,7 @@
 ========================================================================
 Desarrolladores: Sergio Ignacio Hernández Cisternas / Mario Mieres
 Organización: Tierra Ayni
-Fecha de Actualización:02 de marzo 2026
+Fecha de Actualización:03 de marzo 2026
 Plataforma: QGIS VERSION 3.44.6 (PyQGIS) Solothurn 
 
 1. DESCRIPCIÓN GENERAL
@@ -50,4 +50,5 @@ integración directa en los sistemas SIG de infra poste BD consorcio - ANDE.
 ------------------------------------------------------------------------
 Interfaz optimizada con feedback en tiempo real (QgsMessageBar), cursores 
 de espera y personalización corporativa (Tierra Ayni Esmeralda #008d62).
+
 ========================================================================
