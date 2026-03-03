@@ -1,0 +1,61 @@
+========================================================================
+PATRÓN DE ARQUITECTURA MVC - ANDE PLUGIN 
+========================================================================
+El proyecto ANDE Plugin está estructurado utilizando el patrón de diseño 
+de software MVC (Modelo-Vista-Controlador). Esto garantiza un código 
+desacoplado, escalable y fácil de mantener.
+
+1. EL MODELO (M) -> Carpeta /core/
+------------------------------------------------------------------------
+Representa el "Cerebro" y la lógica de negocio. Aquí se ejecutan los 
+algoritmos matemáticos y espaciales usando la API de PyQGIS. El Modelo 
+no sabe nada de la interfaz gráfica.
+
+Módulos principales del Modelo:
+- Generadores (generador_lineas.py, generador_lineas_mt.py): Trazado base.
+- Segmentadores y Fusionadores: Lógica de grafos y circuitos continuos.
+- DivisorTransformadoresMT: Motor de intersección espacial.
+- Normalizadores (normalizador.py, normalizadorbt.py): Motor de base de datos, 
+  gestión de atributos y protección de memoria (Bulk Delete).
+- Procesadores (procesador_equipos.py, procesador_terminales.py, 
+  procesador_lineas_disponibles.py): Motores de filtrado y álgebra 
+  espacial milimétrica (QgsSpatialIndex).
+
+2. LA VISTA (V) -> ande_plugin_dialog.py & .ui
+------------------------------------------------------------------------
+Representa el "Rostro" del plugin. Es la interfaz gráfica con la que 
+interactúa el usuario final (Tania, auditores).
+
+Componentes de la Vista:
+- Archivo .ui (Qt Designer): Diseño visual, disposición de botones, 
+  inputs (QComboBox, QSpinBox) y pestañas (Tabs).
+- ande_plugin_dialog.py: Clase Python compilada que renderiza los widgets.
+- Interfaz QGIS: Uso de `QgsMessageBar` para feedback no intrusivo y 
+  `QMessageBox` para reportes finales.
+- Estilización: Inyección de QGraphicsColorizeEffect y CSS para el 
+  branding visual de Tierra Ayni (Color #008d62).
+
+3. EL CONTROLADOR (C) -> ande_plugin.py
+------------------------------------------------------------------------
+Representa el "Director de Orquesta". Su trabajo es escuchar las acciones 
+de la Vista (clics de botones) y dar las órdenes correspondientes al Modelo.
+
+Responsabilidades del Controlador:
+- Inicializar el plugin en la barra de herramientas de QGIS (`initGui`).
+- Binding (Conexiones): Conectar el botón "Generar" con las funciones lógicas.
+  Ej: `self.dlg.btn_generar_mt.clicked.connect(self.ejecutar_generacion_mt)`
+- Orquestación: Dirigir la secuencia de ejecución (Paso 1: Generar, Paso 2: 
+  Segmentar, Paso 3: Fusionar, etc.).
+- Seguridad y UX: Manejo de Excepciones (`try/except`), cambio del cursor a 
+  `Qt.WaitCursor`, actualización de la barra de mensajes y renderizado 
+  final en el Canvas de QGIS (`updateExtents()`).
+- Lógica de Renombrado (Regex): Analiza el input de la vista para autocompletar 
+  el nombre de la capa de salida del modelo.
+
+========================================================================
+VENTAJAS DE ESTA ARQUITECTURA EN TIERRA AYNI:
+Al separar el cálculo geométrico (Core) de la interfaz de usuario (Vista), 
+el equipo de desarrollo puede optimizar algoritmos pesados de Media Tensión 
+sin congelar o romper la ventana de QGIS, asegurando una experiencia de 
+grado corporativo.
+========================================================================
