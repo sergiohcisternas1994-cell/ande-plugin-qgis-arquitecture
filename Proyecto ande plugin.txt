@@ -1,0 +1,53 @@
+========================================================================
+🔌 ANDE PLUGIN v3.3 (Edición nivel "Ingeniería Alemana") - TIERRA AYNI 
+========================================================================
+Desarrolladores: Sergio Ignacio Hernández Cisternas / Mario Mieres
+Organización: Tierra Ayni
+Fecha de Actualización:02 de marzo 2026
+Plataforma: QGIS VERSION 3.44.6 (PyQGIS) Solothurn 
+
+1. DESCRIPCIÓN GENERAL
+------------------------------------------------------------------------
+ANDE Plugin es una herramienta de grado corporativo diseñada para la 
+generación automática, corrección topológica y auditoría de redes 
+eléctricas de Baja Tensión (BT) y Media Tensión (MT) a partir de datos 
+de relevamiento LiDAR (postes). 
+
+El plugin transforma nubes de puntos crudas en circuitos eléctricos 
+continuos, respetando la vía pública, cortando en puntos críticos 
+(Transformadores y Equipos) y normalizando la base de datos para su 
+integración directa en los sistemas SIG de infra poste BD consorcio - ANDE.
+
+2. MÓDULOS PRINCIPALES (CORE)
+------------------------------------------------------------------------
+* Red Baja Tensión (BT):
+  - Trazado inteligente con segmentación y fusión de circuitos.
+  - Normalizador BT: Estándar corporativo de los 4 atributos.
+  - Renombrado Automático (Regex): Identificación inteligente de lotes.
+
+* Red Media Tensión (MT):
+  - Trazado de vanos largos (65m urbano / 120m+ rural).
+  - Divisor de Transformadores: Corte físico estricto en PDs y Equipos Críticos.
+  - Normalizador MT (Anti-Crash): Limpieza de atributos en bloque (Bulk Delete) 
+    para procesamientos masivos sin colapso de memoria RAM.
+
+3. MÓDULOS COMPLEMENTARIOS Y AUDITORÍA (TOOLBOX)
+------------------------------------------------------------------------
+* Acometidas (BT): Conexión de clientes a postes con gestión de IDs continuos 
+  e inyección directa a la capa oficial (incluye capa Audit).
+* Luminarias (AP): Trazado automático de Alumbrado Público respetando calles.
+* Filtro de Equipos Críticos (MT): Extracción VIP de elementos de maniobra 
+  (Seccionadores, Reconectadores) para segmentación de red.
+* Terminales de Línea: Auditoría QA/QC cruzada entre base de datos (texto) 
+  y dibujo geométrico.
+* Calculador de Cupos (Líneas Dispo.): Análisis espacial milimétrico que cruza 
+  la capacidad teórica del poste vs el uso real de la red, detectando 
+  disponibilidad para planificación.
+* Semáforos de Diagnóstico: Colorización de la red (Verde/Amarillo/Rojo) 
+  según el cumplimiento de la distancia máxima por vano.
+
+4. ASPECTOS VISUALES Y UX
+------------------------------------------------------------------------
+Interfaz optimizada con feedback en tiempo real (QgsMessageBar), cursores 
+de espera y personalización corporativa (Tierra Ayni Esmeralda #008d62).
+========================================================================

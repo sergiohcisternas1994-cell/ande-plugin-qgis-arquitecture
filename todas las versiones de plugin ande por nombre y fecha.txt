@@ -1,0 +1,41 @@
+HISTORIAL DE VERSIONES - PROYECTO ANDE PLUGIN 
+PERIODO DE DESARROLLO DICIEMBRE 2025 - ENERO - FEBRERO - MARZO 2026
+=================================================
+Desarrolladores: Mario Mieres/ Sergio Hernández 
+Ubicación de software ande plugin: C:\Users\cuent\AppData\Roaming\QGIS\QGIS3\profiles\default\python\plugins\ande_plugin
+
+--- MARZO ---
+Coming Soon under construction…… until 13 de marzo 2026. 
+[v3.3] - 02 de marzo (ACT) actualización y correc. duplicidad de atributo rwo_tipo_linea en procesador/luminarias
+
+-- FEBRERO --
+[v3.2] - 25 de febrero (ACT) actualización y modif. de generador(paso 3) Mario actualizo generador de líneas para eliminar/atenuar las líneas en tramos largos con superposiciones  
+[v3.1] - 24 de febrero (ACT) actualización y modif. de Fusionador paso3 con implementación de función nativa merge line() que pega los vértices generados por unary unión() 
+[v3.0] - 23 de febrero (ACT) actualización y modif. de Fusionador(paso 3) para eliminar líneas superpuestas en red bt y mt//actualización de luminarias en red bt.   
+[v2.9] - 20 de Febrero (ACT) Procesador de Líneas Disponibles (Cupos MT) corregido (escaneo milimétrico con Índices Espaciales) + mejoras visuales corporativas.  
+[v2.8] - 17 de Febrero (ACT) Corrección Anti-Crash (Violación de Memoria) en Normalizador MT mediante borrado en bloque (Bulk Delete). Personalización de UI (Logo Verde Esmeralda #008d62).
+[v2.7] - 16 de Febrero (ACT) Mejora en Estandarización de Atributos: Ocultamiento automático de campos auxiliares internos (es_terminal_pd, tipo_pd_kva) para entrega limpia al usuario final.
+[v2.6] - 13 de Febrero (ACT) Actualización Divisor Transformadores MT: Integración de la capa de Equipos Críticos para generar cortes físicos de red no solo en PDs, sino en elementos de maniobra.
+[v2.5] - 11 de Febrero (ACT) Refinamiento módulo Alumbrado Público (Luminarias): Integración de Feedback Visual en interfaz (Barra de carga / messageBar) y optimización geométrica.
+[v2.4] - 10 de Febrero (ACT) Nomenclatura Inteligente: Implementación de Regex para detección automática del número de Lote y renombrado estandarizado de la capa final (ej. "Red MT lote xx auto").
+[v2.3] - 09 de Febrero (ACT) Creación e integración del Normalizador de Campos (NormalizadorCampos) inicial para forzar el "Estándar de los 4 Atributos" (rwo_id, rwo_tipo_linea, rwo_nr_fases, rwo_nivel_tension).
+[v2.2] - 05 de Febrero (ACT) Actualización Crítica Acometidas: Inyección automatizada a la capa oficial con gestión inteligente de ID continuos (`rwo_id`) evitando nulos, más creación de capa paralela "Audit".
+[v2.1] - 03 de Febrero (ACT) Implementación de los Complementos de Auditoría de red: Procesador de Terminales de línea (BT/MT) y primera versión base del Procesador de Equipos Críticos (Filtro VIP). 
+
+-- ENERO --
+[v2.0] - 30 de Enero (ACT) Mejora de cruces de calles BT Y MT. Algoritmo inteligente para respetar trayectorias de la vía pública.
+[v1.9] - 27 de Enero (ACT) Integración primera versión del Módulo Complementario Luminarias (AP) hacia capa calles.
+[v1.8] - 23 de Enero (ACT) Integración primera versión del Módulo Complementario Acometidas (Conexión clientes a postes).
+[v1.7] - 17 de Enero (ACT) Consolidación del flujo de Fusión de líneas: Circuitos continuos a partir de tramos segmentados.
+[v1.6] - 16 de Enero (ACT) Implementación de Divisor Transformadores (Corte Físico MT): La red ahora se detiene obligatoriamente en los PDs.
+[v1.5] - 15 de Enero (ACT) Expansión del Diagnóstico Visual (Semáforos de Colores) para la Red MT.
+[v1.4] - 13 de Enero (ACT) Incorporación lógica base de Semáforos de Colores Inteligentes para auditoría de vanos en BT.
+[v1.3] - 12 de Enero (ACT) Mejoras en la segmentación matemática de las líneas autogeneradas.
+[v1.2] - 09 de Enero (ACT) Versión 1.2 + Mejoras visuales. 
+[v1.1] - 09 de Enero (ACT) Versión 1.1 + Mejoras visuales.  
+[v1.0] - 08 de Enero (Versión Inicial) Solo gen. líneas auto. BT Y MT.
+
+===============================================
+Total de versiones registradas: 23
+Última actualización: 02 de marzo 2026
+
