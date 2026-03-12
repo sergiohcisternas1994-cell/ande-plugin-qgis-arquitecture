@@ -1,11 +1,11 @@
 HISTORIAL DE VERSIONES - PROYECTO ANDE PLUGIN 
 PERIODO DE DESARROLLO DICIEMBRE 2025 - ENERO - FEBRERO - MARZO 2026
 =================================================
-Desarrolladores: Mario Mieres/ Sergio Hernández 
+Desarrolladores: Mario Mieres / Sergio Hernández 
 Ubicación de software ande plugin: C:\Users\cuent\AppData\Roaming\QGIS\QGIS3\profiles\default\python\plugins\ande_plugin
 
 --- MARZO ---
-Coming Soon under construction…… until 13 de marzo 2026. 
+[v3.4] - 12 de marzo (ACT) Versión "Legado" (Sentinel Edition): Unificación total de Red BT + Acometidas + Luminarias en un solo grafo espacial continuo (0% superposición mediante Union-Find). Creación e integración del módulo QA Topológico (Centinela) con filtro Anti-FME, clasificador de nodos flotantes y exportación de reportes gerenciales (.csv). Cierre oficial de Práctica Profesional.
 [v3.3] - 03 de marzo (ACT) actualización y correc. duplicidad de atributo rwo_tipo_linea en procesador/luminarias
 
 -- FEBRERO --
@@ -36,7 +36,5 @@ Coming Soon under construction…… until 13 de marzo 2026.
 [v1.0] - 08 de Enero (Versión Inicial) Solo gen. líneas auto. BT Y MT.
 
 ===============================================
-Total de versiones registradas: 23
-Última actualización: 02 de marzo 2026
-
-
+Total de versiones registradas: 24
+Última actualización: 12 de marzo 2026
