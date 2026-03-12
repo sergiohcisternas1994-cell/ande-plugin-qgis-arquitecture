@@ -1,5 +1,5 @@
 ========================================================================
-ESTRUCTURA DE DIRECTORIOS Y ARCHIVOS - ANDE PLUGIN v3.3 25 febrero
+ESTRUCTURA DE DIRECTORIOS Y ARCHIVOS - ANDE PLUGIN v3.4 "Legado" (12 Marzo)
 ========================================================================
 Ruta de instalación local: 
 C:\Users\[usuario]\AppData\Roaming\QGIS\QGIS3\profiles\default\python\plugins\ande_plugin\
@@ -16,10 +16,10 @@ ande_plugin/                      # Directorio Raíz del Plugin
 ├── core/                         # MODELO (MVC): Carpeta con el "Cerebro" y lógica de negocio.
 │   ├── __init__.py               # Convierte la carpeta 'core' en un módulo de Python importable.
 │   │
-│   ├── (Módulos de Baja Tensión - BT)
+│   ├── (Módulos de Baja Tensión - BT Unificada)
 │   ├── generador_lineas.py       # Algoritmo de trazado inicial para red BT.
 │   ├── segmentador_lineas.py     # Corta las líneas BT generadas en cada poste.
-│   ├── fusionador_lineas.py      # Une tramos segmentados en circuitos continuos BT.
+│   ├── fusionador_lineas.py      # Une tramos segmentados (Union-Find) eliminando superposiciones.
 │   ├── normalizadorbt.py         # Limpia atributos, impone estándar corporativo y renombra capa BT.
 │   │
 │   ├── (Módulos de Media Tensión - MT)
@@ -29,7 +29,8 @@ ande_plugin/                      # Directorio Raíz del Plugin
 │   ├── divisor_transformadores.py# Motor espacial que corta la línea MT al intersectar un PD/Equipo.
 │   ├── normalizador.py           # Estándar MT, renombra capa y usa "Bulk Delete" para no saturar RAM.
 │   │
-│   ├── (Módulos Complementarios - Toolbox)
+│   ├── (Módulos Complementarios y Auditoría - Toolbox)
+│   ├── qa_topologico.py          # [NUEVO] CENTINELA: Auditoría topológica Anti-FME y exportador CSV.
 │   ├── procesador_acometidas.py  # Genera líneas cliente-poste inyectando ID continuo en capa oficial.
 │   ├── procesador_luminarias.py  # Conecta puntos de luz (AP) a la red respetando ejes de calles.
 │   ├── procesador_equipos.py     # Filtra elementos de maniobra (Seccionadores/Reconectadores).
