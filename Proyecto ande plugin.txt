@@ -1,5 +1,5 @@
 ========================================================================
-🔌 ANDE PLUGIN v3.3 (Edición nivel "Ingeniería Alemana") - TIERRA AYNI 
+🔌 ANDE PLUGIN v3.4 (Edición "Legado" / Sentinel Edition) - TIERRA AYNI 
 ========================================================================
 Desarrolladores: Sergio Ignacio Hernández Cisternas / Mario Mieres
 Organización: Tierra Ayni
@@ -13,16 +13,23 @@ generación automática, corrección topológica y auditoría de redes
 eléctricas de Baja Tensión (BT) y Media Tensión (MT) a partir de datos 
 de relevamiento LiDAR (postes). 
 
-El plugin transforma nubes de puntos crudas en circuitos eléctricos 
-continuos, respetando la vía pública, cortando en puntos críticos 
-(Transformadores y Equipos) y normalizando la base de datos para su 
-integración directa en los sistemas SIG de infra poste BD consorcio - ANDE.
+En su versión cumbre (v3.4), el plugin no solo transforma nubes de puntos 
+en circuitos continuos, sino que logra la unificación total de la Red BT 
+con sus derivaciones (Acometidas y Luminarias). El resultado es un único 
+grafo espacial con continuidad matemática de IDs, sin superposiciones 
+geométricas (0% "efecto rebote") y listo para su ingesta directa en los 
+sistemas SIG de Infra Poste BD consorcio - ANDE.
 
 2. MÓDULOS PRINCIPALES (CORE)
 ------------------------------------------------------------------------
-* Red Baja Tensión (BT):
-  - Trazado inteligente con segmentación y fusión de circuitos.
-  - Normalizador BT: Estándar corporativo de los 4 atributos.
+
+
+* Red Baja Tensión (BT) Unificada:
+  - Trazado inteligente con segmentación y fusión de circuitos mediante 
+    Teoría de Grafos (Algoritmo Union-Find).
+  - Inyección Directa: Acometidas y Alumbrado Público (AP) se sueldan 
+    topológicamente a la red principal manteniendo numeración continua.
+  - Normalizador BT: Estándar corporativo estricto de los 4 atributos.
   - Renombrado Automático (Regex): Identificación inteligente de lotes.
 
 * Red Media Tensión (MT):
@@ -33,6 +40,13 @@ integración directa en los sistemas SIG de infra poste BD consorcio - ANDE.
 
 3. MÓDULOS COMPLEMENTARIOS Y AUDITORÍA (TOOLBOX)
 ------------------------------------------------------------------------
+*  QA Topológico (El Centinela - Anti FME):
+  - Escáner milimétrico de la red que audita IDs, geometrías y topología.
+  - Clasificador Inteligente de Nodos: Discrimina entre falsos positivos 
+    de FME (Dangles justificados por Acometidas) y cortes reales de red.
+  - Detector de Micro-tramos (<10cm) y Geometrías Multiparte.
+  - Exportación automática de Reportes Gerenciales a Excel (.csv).
+
 * Acometidas (BT): Conexión de clientes a postes con gestión de IDs continuos 
   e inyección directa a la capa oficial (incluye capa Audit).
 * Luminarias (AP): Trazado automático de Alumbrado Público respetando calles.
@@ -48,7 +62,9 @@ integración directa en los sistemas SIG de infra poste BD consorcio - ANDE.
 
 4. ASPECTOS VISUALES Y UX
 ------------------------------------------------------------------------
-Interfaz optimizada con feedback en tiempo real (QgsMessageBar), cursores 
-de espera y personalización corporativa (Tierra Ayni Esmeralda #008d62).
-
+Interfaz gráfica asíncrona (PyQt5) con arquitectura MVC. Optimización de 
+experiencia de usuario mediante feedback en tiempo real (QgsMessageBar), 
+ventanas de diálogo nativas para exportación de reportes y personalización 
+corporativa (Tierra Ayni Esmeralda #008d62).
 ========================================================================
+
