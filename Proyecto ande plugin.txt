@@ -23,7 +23,6 @@ sistemas SIG de Infra Poste BD consorcio - ANDE.
 2. MÓDULOS PRINCIPALES (CORE)
 ------------------------------------------------------------------------
 
-
 * Red Baja Tensión (BT) Unificada:
   - Trazado inteligente con segmentación y fusión de circuitos mediante 
     Teoría de Grafos (Algoritmo Union-Find).
@@ -67,4 +66,5 @@ experiencia de usuario mediante feedback en tiempo real (QgsMessageBar),
 ventanas de diálogo nativas para exportación de reportes y personalización 
 corporativa (Tierra Ayni Esmeralda #008d62).
 ========================================================================
+
 
